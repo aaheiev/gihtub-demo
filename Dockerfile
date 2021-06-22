@@ -1,5 +1,5 @@
 # docker build -t github-demo:latest .
-FROM nginx:1.21-alpine
+FROM nginx:1-alpine
 
 ARG assembly_version=0.0.0.0
 ARG http_port=80

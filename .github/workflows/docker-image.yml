@@ -25,6 +25,11 @@ jobs:
 
     # - name: Output BUILD_NUMBER
     #   run: echo $BUILD_NUMBER
+    - shell: bash
+      env:
+        DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
+      run: |
+        example-command "$DEMO_SECRET"
 
     - name: Output Run ID
       run:  echo ${{ github.run_id }}
