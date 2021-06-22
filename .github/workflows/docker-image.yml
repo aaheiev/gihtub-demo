@@ -2,7 +2,10 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - develop
+      - main
+
   pull_request:
     branches: [ main ]
 
@@ -24,13 +27,16 @@ jobs:
     #   run: echo $BUILD_NUMBER
 
     - name: Output Run ID
-      run: echo ${{ github.run_id }}
+      run:  echo ${{ github.run_id }}
 
     - name: Output Run Number
-      run: echo ${{ github.run_number }}
+      run:  echo ${{ github.run_number }}
 
     - name: Build Docker image
       run:  docker build -t aaheiev/github-demo:latest .
+
+    - name: Tag Docker image
+      run:  docker tag aaheiev/github-demo:latest aaheiev/github-demo:${{ github.run_number }}
 
     # - name: Tag Docker image
     #   run:  docker build -t aaheiev/github-demo:latest .
