@@ -25,7 +25,7 @@ jobs:
 
     # - name: Output BUILD_NUMBER
     #   run: echo $BUILD_NUMBER
-    - name:  Output Run ID
+    - name:  Output Variables
       shell: bash
       env:
         DEMO_SECRET: ${{ secrets.demo_secret }}
