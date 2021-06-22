@@ -14,7 +14,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+
+    - name: Output Run ID
+      run: echo ${{ github.run_id }}
+
+    - name: Output Run Number
+      run: echo ${{ github.run_number }}
+
+    - name: Build Docker image
       run:  docker build -t aaheiev/github-demo:latest .
+
+    # - name: Tag Docker image
+    #   run:  docker build -t aaheiev/github-demo:latest .
 
       # run: docker build . --file Dockerfile --tag aaheiev/github-demo:latest:$(date +%s)
