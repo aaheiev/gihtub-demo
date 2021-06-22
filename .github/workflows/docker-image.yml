@@ -30,7 +30,7 @@ jobs:
         DEMO_SECRET: ${{ secrets.demo_secret }}
       run: |
         echo "$DEMO_SECRET"
-        echo ${{ secrets.DEMO_SECRET }}
+        echo "demo_secret is ${{ secrets.demo_secret }}"
 
     - name: Output Run ID
       run:  echo ${{ github.run_id }}
