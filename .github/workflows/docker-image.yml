@@ -26,14 +26,14 @@ jobs:
     # - name: Output BUILD_NUMBER
     #   run: echo $BUILD_NUMBER
     - name:  Output Run ID
-    - shell: bash
+      shell: bash
       env:
         DEMO_SECRET: ${{ secrets.demo_secret }}
-      run: |
+      run:   |
         echo "DEMO_SECRET is $DEMO_SECRET"
-        # echo "demo_secret is ${{ secrets.demo_secret }}"
-        # echo "Run ID      is ${{ github.run_id }}"
-        # echo "Run Number  is ${{ github.run_number }}"
+        echo "demo_secret is ${{ secrets.demo_secret }}"
+        echo "Run ID      is ${{ github.run_id }}"
+        echo "Run Number  is ${{ github.run_number }}"
 
     # - name: Output Run ID
     #   run:  echo ${{ github.run_id }}
