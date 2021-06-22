@@ -13,13 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: einaregilsson/build-number@v1
-      with:
-        token: ${{secrets.github_token}}
+
     - uses: actions/checkout@v2
 
-    - name: Output BUILD_NUMBER
-      run: echo $BUILD_NUMBER
+    # - uses: einaregilsson/build-number@v1
+    #   with:
+    #     token: ${{secrets.github_token}}
+
+    # - name: Output BUILD_NUMBER
+    #   run: echo $BUILD_NUMBER
 
     - name: Output Run ID
       run: echo ${{ github.run_id }}
