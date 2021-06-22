@@ -29,14 +29,15 @@ jobs:
         echo "Run ID      is ${{ github.run_id }}"
         echo "Run Number  is ${{ github.run_number }}"
 
-    - name: Build Docker image
-      run:  docker build -t aaheiev/github-demo:latest .
+    - name:  Build Docker image
+      run:   docker build -t aaheiev/github-demo:latest .
 
   test:
     runs-on: ubuntu-latest
+    needs:   build
     steps:
 
-    - uses: actions/checkout@v2
+    - uses:  actions/checkout@v2
 
     - name:  Output Variables
       shell: bash
@@ -58,6 +59,7 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    needs:   test
     steps:
 
     - uses: actions/checkout@v2
